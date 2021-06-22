@@ -43,27 +43,9 @@ function setup() {
 function draw() {
     background("skyBlue");
 
-    damage();
-
     if (touching(wall,bullet)) {
-         damage();
-    }
-
-    drawSprites();
-}
-
-function touching(a,b) {
-    if (a.x - b.x < a.width/2 + b.width/2) {
-        return true;
-    } else {
-        return false;
-    }
-}
-
-function damage() {
-    var d = 0.5 * weight * speed * speed / (thickness * thickness * thickness);
-    console.log(damage)
-
+        var d = 0.5 * weight * speed * speed / (thickness * thickness * thickness);
+        
     if (d < 10) {
         r.visible = true;
         bullet.velocityX = 0;
@@ -75,5 +57,16 @@ function damage() {
         bullet.velocityX = 0;
         wallSound.play();
         bullet.changeImage(bullet2);
+    }
+    }
+
+    drawSprites();
+}
+
+function touching(a,b) {
+    if (a.x - b.x < a.width/2 + b.width/2) {
+        return true;
+    } else {
+        return false;
     }
 }
