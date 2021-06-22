@@ -27,7 +27,7 @@ function setup() {
     bullet.addImage(bulletImage);
     bullet.debug = true;
     bullet.scale = 0.42;
-    bullet.velocityX = 4;
+    bullet.velocityX = Math.round(random(30,50));;
     bullet.setCollider("rectangle",0,0,bullet.width,bullet.height);
 
     wall = createSprite(w/1.2,h/2,thickness,h/1.5);
